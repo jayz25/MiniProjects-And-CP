@@ -1,0 +1,71 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayesh Patil</title>
+
+    <link href = "{% static '/css/main.css' %}" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+    
+</head>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-body" id="profile-wrapper">
+                    <img id="profile-pic" src="{% static 'images/Jayesh.jpg' %}" >
+                    <hr>
+                    <h4>Hi I'm Jayesh</h4>
+                    <p>I love coding, learning new stuff.</p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card card-body"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h4>My Experience as a Developer</h4>
+                    <hr>
+                    <p>I've worked on some personal projects. Built some games, webapps and some UI design with Python.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                <h4>What I Know</h4>
+                <hr>
+                <p>Python, Django, HTML/CSS, Javascript, Python Pygame, Python PyQt and many more.</p>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h4>How I learn</h4>
+                    <hr>
+                    <p>I usually prefer to learn from Youtube, Coursera and many more online platforms via tutorials and online workshops.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <h4>My Education</h4>
+                    <hr>
+                    <p>I'm currently persuing my B.E Engineering degree specializing in Information Technology.</p>
+                </div>
+            </div>
+        </div>
+</div>
+    
+</body>
+</html>

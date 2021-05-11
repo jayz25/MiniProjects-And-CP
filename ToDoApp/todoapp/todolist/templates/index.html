@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoApp</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div django-app="TaskManager">
+    <div class="container">
+        <div class="content">
+            <h1>ToDoApp</h1>
+            <p class="tagline">a Django ToDo App</p>
+            <form action="/" method="post">
+                {% csrf_token %} 
+                <div class="inputContainer">
+                    <input type="text" id="description"
+                    class="taskName" placeholder="What do you need to do?"
+                    name="description" required>
+                    <label for="description">Description</label>
+                </div>
+                <div class="inputContainer half">
+                    <input type="date" id="dueDate" class="taskDate"
+                    name="date">
+                    <label for="duedate">Due Date</label>
+                </div>
+                <div class="row">
+                    <button class="taskAdd" name="taskAdd"
+                    type="submit"><i class="fa fa-plus icon"></i>Add Task</button>
+                    <button class="taskDelete" name="taskDelete" formnovalidate="" type="submit"
+                    onclick="$('input#sublist').click();"><i class="fa fa-trash-o icon"></i>Delete Tasks</button>
+                </div>
+                <ul class="taskList">
+                    {% for task in tasks %}
+
+                        <li class="taskItem">
+                            <input type="checkbox" class="taskCheckbox" name="checkedBox" id="{{task.id}}" value="{{task.id}}">
+                            <label for="{{task.id}}"><span class="complete">{{ task.title}}</span></label>
+                            <strong class="taskDate"><i class="fa fa-calender"></i>{{task.created}} - {{ task.due_date}}</strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
