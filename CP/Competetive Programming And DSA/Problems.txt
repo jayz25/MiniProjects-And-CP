@@ -1,0 +1,15 @@
+Fibonacci
+Longest Subsequence
+Floyd-Warshall
+Bellman-Ford
+Longest Path
+Shortest Path
+Travelling Salesman
+Knapsack/Fractional Knapsack?
+Trapping Rain Water
+Least wasteful way to cut raw materials
+portfolio optimization
+cutting stock problems
+Job Sequencing Problem
+Matrix Chain Multiplication
+Longest Common Subsequence
