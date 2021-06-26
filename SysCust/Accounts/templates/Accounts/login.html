@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {%csrf_token%}
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username..">
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {% for message in messages %}
+            <p id="messages">{{message}}</p>
+        {% endfor %}
+        <p>Don't have an Account? <a href="{% url 'register' %}"> Sign up</a></p>
+        <p>Forgot Password? <a href="{% url 'reset_password' %}">Reset here</a></p>
+    </div>
+    
+    <script>
+        /* Placeholder values are not set in forms.py (how to do it?) they will be set here using vanilla JavaScript */
+        //Query All input fields
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = "Username...";
+        form_fields[2].placeholder = "Enter Password";
+    
+        for(field in form_fields){
+            form_fields[field].className += ' form-control'
+        }
+    </script>
+    </body>
+    </html>
+</body>
+</html>
